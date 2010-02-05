@@ -1,6 +1,9 @@
 Changes
 =======
 
+0.00003 - 05 Feb 2009
+    * Properly split on :\s* when splitting headers (Reported by miyagawa)
+
 0.00002 - 05 Feb 2009
     * Work with boundaries being sent before the data
 

@@ -4,7 +4,7 @@ use AnyEvent::HTTP;
 use AnyEvent::Util qw(guard);
 use base qw(Exporter);
 our @EXPORT = qw(mxhr_get);
-our $VERSION = '0.00002';
+our $VERSION = '0.00003';
 
 sub mxhr_get ($@) {
     my $cb = pop;
