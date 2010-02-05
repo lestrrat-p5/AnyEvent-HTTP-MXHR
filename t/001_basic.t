@@ -79,7 +79,7 @@ test_tcp(
             sub {
                 my ($body, $headers) = @_;
 
-                if ($headers->{'content-type'} =~ /application\/json/) {
+                if ($headers->{'content-type'} =~ /^application\/json/) {
                     ok(1, "json received");
                     my $json = eval { decode_json $body };
                     ok ($json, "JSON decoded OK");
