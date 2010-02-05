@@ -69,7 +69,7 @@ sub mxhr_get ($@) {
                 my $headers = $1;
 
                 my %headers = map {
-                    my ($n, $v) = split(/:/, $_, 2);
+                    my ($n, $v) = split(/:\s*/, $_, 2);
                     # lower case it to align with the rest of AE::HTTP
                     $n = lc $n;
                     ($n, $v);
