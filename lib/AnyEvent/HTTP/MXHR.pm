@@ -118,7 +118,7 @@ WARNING: alpha quality code!
 
 =head1 FUNCTION
 
-=head2 mxhr_get $uri, key => value..., $cb->($body, $headers)
+=head2 mxhr_get $uri, key => value..., $cb->($body, $headers, $handle)
 
 Sends an HTTP GET request, and for each item in the multipar response, 
 executes C<$cb>. C<$cb> receives the body of the item, and the sub headers
