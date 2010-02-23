@@ -74,7 +74,7 @@ sub mxhr_get ($@) {
                     $n = lc $n;
                     ($n, $v);
                 } split(/\r?\n/, $headers);
-                if (! eval { $cb->($data, \%headers) }) {
+                if (! eval { $cb->($data, \%headers, $handle) }) {
                     %state = ();
                     return;
                 }
