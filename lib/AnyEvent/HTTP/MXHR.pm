@@ -37,7 +37,7 @@ sub mxhr_get ($@) {
             if (! $handle) {
                 undef $state{guard};
                 %state = ();
-                $on_error->("Connection failed");
+                $on_error->("Connection failed") if $on_error;
                 return ();
             }
 
@@ -47,8 +47,9 @@ sub mxhr_get ($@) {
                 $data =~ s/^\s+//;
                 if ($data !~ s/(?:^|\r?\n)--$state{boundary}\n?$// ) {
                     # shouldn't even get here
-                    $handle->on_error->("No boundary found");
-                    %state = ();
+                    if ($handle->{on_error}) {
+                        $handle->{on_error}->("No boundary found");
+                    }
                     return;
                 }
 
