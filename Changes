@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.00005 - 24 Feb 2010
+    * Fix resetting on_error handlers being ignored.
+    * Now on_error/on_eof does not free the current client.
+      You need to explicitly free it yourself
+
 0.00004 - 23 Feb 2010
     * Add handle as the third parameter, but don't use it unless you're
       wacky like me.
