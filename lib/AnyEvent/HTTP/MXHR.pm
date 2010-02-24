@@ -44,6 +44,7 @@ sub mxhr_get ($@) {
             my $callback; $callback = sub {
                 my ($handle, $data) = @_;
 
+                return unless %state;
                 $data =~ s/^\s+//;
                 if ($data !~ s/(?:^|\r?\n)--$state{boundary}\n?$// ) {
                     # shouldn't even get here
