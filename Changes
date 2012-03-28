@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.00007 - 28 Mar 2012
+    * Fix a problem where the handle goes away on newer versions of
+      AnyEvent. (rt #76115, Alex Vandiver)
+    * Make sure that we have AE 6.01 for the above fix.
+
 0.00006 - 24 Feb 2010
     * Be a bit more careful when we fire on_error
     * Don't run callback when we have been freed already
